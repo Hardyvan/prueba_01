@@ -13,7 +13,7 @@ class ThemePage extends StatelessWidget {
     // Usamos watch aquí para que toda la página reaccione a los cambios
     // y la "Vista Previa" se actualice en tiempo real.
     final theme = Theme.of(context);
-    final colors = theme.colorScheme;
+
 
     return Scaffold(
       appBar: AppBar(
@@ -179,7 +179,7 @@ class _ThemeColorPicker extends StatelessWidget {
           runSpacing: 12,
           alignment: WrapAlignment.start,
           children: AppPalettes.all.map((color) {
-            final isSelected = controller.color.value == color.value; // Compara por valor
+            final isSelected = controller.color.toARGB32() == color.toARGB32(); // Compara por valor
 
             return GestureDetector(
               onTap: () => controller.changeColor(color),

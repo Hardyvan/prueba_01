@@ -23,7 +23,7 @@ class AppPalettes {
         1,
       );
     }
-    return MaterialColor(color.value, swatch);
+    return MaterialColor(color.toARGB32(), swatch);
   }
 
   /// ------------------------------------------------------------
